@@ -42,7 +42,7 @@ This portfolio demonstrates real SOC workflows including alert triage, threat hu
 
 ---
 
-## 4/6/2026 **PEAK**  
+## -4/6/2026- **PEAK**  
 **Scenario:** Unusual activity originating from the private network 10.x.x.x in the logs on the application development server. 
 **What I did:**  
 - Analyzed server logs(syslog, auth.log, auditd logs, apache logs) to identify malicious requests  
@@ -56,7 +56,7 @@ This portfolio demonstrates real SOC workflows including alert triage, threat hu
 **Findings:**  
 - Server compromised via vulnerable upload endpoint  
 - Attacker deployed a PHP web shell and modified site content  
-**Tools:** Elatic
+**Tools:** -Elatic
 **Lessons Learned:**  
 - Enforce MFA for SSH.
 - Restrict SSH to VPN or jump host.
