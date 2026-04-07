@@ -42,6 +42,29 @@ This portfolio demonstrates real SOC workflows including alert triage, threat hu
 
 ---
 
+## 4/6/2026 **PEAK**  
+**Scenario:** Unusual activity originating from the private network 10.x.x.x in the logs on the application development server. 
+**What I did:**  
+- Analyzed server logs(syslog, auth.log, auditd logs, apache logs) to identify malicious requests  
+- Traced attacker’s IP, user-agent(Hydra), and exploitation path
+- Identified SSh Brute Force.
+- Identified unauthorized download and execution payloads.
+- Identified exploitation of Sudo(CVE-2021-3156)
+- Identified file exfiltration to ngrok.io.
+- Identified Data Destruction.
+- Mapped attacker behavior to MITRE (T1110,T1105,T1204,T1083,T1041,T1485)  
+**Findings:**  
+- Server compromised via vulnerable upload endpoint  
+- Attacker deployed a PHP web shell and modified site content  
+**Tools:** Elatic
+**Lessons Learned:**  
+- Enforce MFA for SSH.
+- Restrict SSH to VPN or jump host.
+- Patch sudo to latest version.
+- Deploy EDR monitoring on Linux hosts
+
+---
+
 ## 1. **Defaced (Enterprise)**  
 **Scenario:** Corporate web server defacement incident.  
 **What I did:**  
