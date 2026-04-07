@@ -56,7 +56,7 @@ This portfolio demonstrates real SOC workflows including alert triage, threat hu
 **Findings:**  
 - Server compromised via vulnerable upload endpoint  
 - Attacker deployed a PHP web shell and modified site content  
-**Tools:** -Elatic  
+**Tools:** Elatic  
 **Lessons Learned:**  
 - Enforce MFA for SSH.
 - Restrict SSH to VPN or jump host.
