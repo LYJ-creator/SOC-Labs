@@ -42,7 +42,7 @@ This portfolio demonstrates real SOC workflows including alert triage, threat hu
 ---
 
 ## **-4/7/2026-PEAK2**  
-**Scenario:** This investigation about the activities of an attacker built reverse webshell on Mountain Top Solutions' Linux server. 
+**Scenario:** This investigation about the activities of an attacker built reverse webshell on Mountain Top Solutions' Linux server.  
 **What I did:**  
 - Analyzed server logs(syslog, auth.log, auditd logs, apache logs) to identify malicious requests  
 - Traced attacker’s IP, user-agent(Hydra), and exploitation path
