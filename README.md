@@ -41,7 +41,7 @@ This portfolio demonstrates real SOC workflows including alert triage, threat hu
 # **Investigation Reports**
 ---
 
-## **-4/9/2026-HASHISH**  
+## **-4/9/2026-SAM**  
 **Scenario:** User executed a malicious HTA file leading to remote code execution, reverse shell, and credential theft via SAM/SYSTEM hive exfiltration.   
 **What I did:**  
 - Reviewed PCAP → identified reverse shell from 172.16.0.4 → 172.16.0.5:80
