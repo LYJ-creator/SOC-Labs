@@ -42,7 +42,7 @@ This portfolio demonstrates real SOC workflows including alert triage, threat hu
 ---
 
 ## **-4/9/2026-HASHISH**  
-**Scenario:** User executed a malicious HTA file leading to remote code execution, reverse shell, and credential theft via SAM/SYSTEM hive exfiltration.  
+**Scenario:** User executed a malicious HTA file leading to remote code execution, reverse shell, and credential theft via SAM/SYSTEM hive exfiltration.   
 **What I did:**  
 - Reviewed PCAP → identified reverse shell from 172.16.0.4 → 172.16.0.5:80
 - Analyzed Sysmon logs → confirmed mshta.exe → powershell.exe execution chain
@@ -51,14 +51,14 @@ This portfolio demonstrates real SOC workflows including alert triage, threat hu
 - Extracted SAM & SYSTEM → recovered 6 NTLM hashes
 - Cracked passwords for Admin (Password!) and Sam (StandardUser)
 - Memory forensics (netscan) → attacker logged in via port 22
-- Identified additional malicious script: jaws-enum.ps1
+- Identified additional malicious script: jaws-enum.ps1  
 **Findings:**  
 - Initial access via malicious sample_template.hta
 - PowerShell payload decompressed using GzipStream
 - Reverse shell established to attacker
 - Credential dumping via SAM/SYSTEM
-- Attacker escalated and performed further enumeration 
-**Tools:** Wireshark, Sysmon, CyberChef, Volatility，Hashes
+- Attacker escalated and performed further enumeration  
+**Tools:** Wireshark, Sysmon, CyberChef, Volatility，Hashes  
 **Lessons Learned:**  
 - Block mshta usage
 - Monitor PowerShell encoded commands
