@@ -40,8 +40,31 @@ This portfolio demonstrates real SOC workflows including alert triage, threat hu
 
 # **Investigation Reports**
 ---
+## **-4/12/2026-Rekcod**  
+**Scenario:** It is easy to casually pull a docker image from docker hub and run it. But can you trust them? What if you need to create a Dockerfile from an image?  
+**What I did:**  
+- Enumerated all local Docker images and validated the total count.
+- Reviewed each image’s metadata using docker history and docker inspect.
+- Analyzed filesystem layers to identify created directories, ownership, and permissions.
+- Extracted and inspected image layers using docker save + tar to review OS‑level artifacts.
+- Parsed JSON configuration files with jq to identify environment variables and layer timestamps.
+- Evaluated image efficiency and wasted space using Dive.
+- Compared findings across images to assess trustworthiness and structural consistency.  
+**Findings:**  
+- Total images: 11.
+- Redis: Creates /data, owned by redis:redis.
+- Fedena index.html: /usr/share/doc/adduser/examples/adduser.local.conf.examples/skel.other/index.html, Permissions: 644.
+- dduportal/bats: OS‑like layer created at 1970‑01‑01T00:00:00Z.
+- WordPress CLI: WORDPRESS_CLI_GPG_KEY = 63AF7AA15067C05616FDDD88A3A2E8F226F0BC06
+- hhvm/hhvm: Efficiency score 99%, wasted space 9 MB.  
+**Tools:** jq, Docker, Dive.  
+**Lessons Learned:**  
+- Docker commands and flags, including comamnds images, history, inspect, run, save.
+- Docker layer structure.
 
-## **-4/9/2026-SAM**  
+---
+
+## **-4/10/2026-SAM**  
 **Scenario:** User executed a malicious HTA file leading to remote code execution, reverse shell, and credential theft via SAM/SYSTEM hive exfiltration.   
 **What I did:**  
 - Reviewed PCAP → identified reverse shell from 172.16.0.4 → 172.16.0.5:80
